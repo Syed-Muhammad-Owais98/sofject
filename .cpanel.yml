@@ -1,0 +1,22 @@
+# ---
+# deployment:
+#  tasks:
+#  - export DEPLOYPATH=/home/ykipfhabkn28/public_html/
+#  - /bin/rm -rf /home/ykipfhabkn28/repositories/sofject/node_modules
+#  - /home/ykipfhabkn28/.nvm/versions/node/v23.0.0/bin/npm i /home/ykipfhabkn28/repositories/sofject/
+#  - /home/ykipfhabkn28/.nvm/versions/node/v23.0.0/bin/npm run build
+#  - /bin/mv out/* /home/ykipfhabkn28/public_html/
+
+
+# .cpanel.yml
+
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/ykipfhabkn28/public_html/
+    - echo "Starting deployment"
+    - /bin/cp -R * $DEPLOYPATH
+    - cd $DEPLOYPATH
+    - npm install
+    - npm run build
+    - echo "Deployment finished"
