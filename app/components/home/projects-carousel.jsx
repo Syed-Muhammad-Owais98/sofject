@@ -107,11 +107,18 @@ export default function ProjectsCarousel() {
       .on('slideFocus', tweenScale)
       .on('scroll', updateSlideClasses)
       .on('reInit', updateSlideClasses);
-  }, [emblaApi, tweenScale, updateSlideClasses])
+  }, [emblaApi, tweenScale, updateSlideClasses]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    const id = setInterval(emblaApi.scrollNext, 2500);
+    return () => clearInterval(id);
+  }, [emblaApi])
 
   return (
     <>
-      <div className="max-w-96 flex flex-col justify-between gap-6">
+      <div className="max-w-96 flex flex-col justify-start gap-6">
         <div>
           <h4 className="text-4xl max-sm:text-2xl font-bold">
             {projects[activeSlideIndex].name}
@@ -136,7 +143,7 @@ export default function ProjectsCarousel() {
           <div className="embla__viewport overflow-hidden" ref={emblaRef}>
             <div className="embla__container flex [touch-action:pan-y_pinch-zoom] ml-[calc(var(--slide-spacing)*-1)]">
               {projects.map(p => p.img).map((img, index) => (
-                <div className="embla__slide [transform:translate3d(0,0,0)] flex-[0_0_var(--slide-size)] min-w-28 pl-[var(--slide-spacing)]" key={index}>
+                <div className="embla__slide [transform:translate3d(0,0,0)] flex-[0_0_var(--slide-size)] min-w-28 pl-[var(--slide-spacing)] cursor-grab active:cursor-grabbing" key={index}>
                   <div className="embla__slide__number h-[--slide-height] select-none max-w-96 w-full">
                     <Image width="512" height="900" src={img.src} alt="Image of the project" className="relative z-50 shadow-md rounded-md object-cover w-64 h-full" />
                   </div>
@@ -146,8 +153,12 @@ export default function ProjectsCarousel() {
           </div>
 
           <div className="mt-4 flex items-center justify-center gap-16">
-            <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-            <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
+            <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled}>
+              <span className="sr-only">Previous project</span>
+            </PrevButton>
+            <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled}>
+              <span className="sr-only">Next project</span>
+            </NextButton>
           </div>
         </div>
       </div>

@@ -18,7 +18,7 @@ export default function Section2() {
       <div className="mt-12 px-4 grid grid-cols-3 gap-6 place-items-center justify-center max-w-screen-lg w-full mx-auto max-sm:gap-2 max-md:grid-cols-2 max-[420px]:grid-cols-1">
         {teamMembers.map((member, i) => (
           <figure key={i} className="w-full h-full aspect-square relative group rounded-xl overflow-hidden">
-            <Image width="560" height="560" className="w-full h-full object-cover" alt={`Photo of ${member.name}`} src={member.img.src} />
+            <Image width="560" height="560" className="w-full h-full object-cover object-top" alt={`Photo of ${member.name}`} src={member.img.src} />
 
             <figcaption className="absolute inset-0 bg-primary p-4 text-white flex flex-col justify-center items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 min-[420px]:max-sm:gap-1">
               <p className="font-serif text-4xl md:max-lg:text-2xl max-sm:text-lg">{member.name}</p>

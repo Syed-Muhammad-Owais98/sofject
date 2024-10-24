@@ -24,35 +24,37 @@ export default function ServicesTab() {
       rotatation = 'rotate-[18deg] max-sm:rotate-[30deg] sm:max-lg:rotate-[24deg] lg:max-2xl:rotate-[27deg]'
       break;
     default:
+      rotatation = ''
       break;
   }
 
   return (
     <div className="grid grid-cols-[1fr_1.6fr_1fr] gap-8 w-full grid-flow-dense max-lg:grid-cols-[1.5fr_1fr] mt-24 max-w-screen-2xl mx-auto overflow-x-clip">
-      <ul className="flex flex-col gap-2 text-right relative self-start max-sm:text-xs">
+      <div className="text-right relative self-start">
         <div className={`absolute left-0 top-1/2 -z-10 size-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary lg:max-2xl:size-48 sm:max-lg:size-60 max-sm:size-36 ring-1 ring-primary ring-offset-[12px] before:absolute before:size-3 before:rounded-full before:bg-primary before:top-1/2 before:-right-3 before:translate-x-1/2 before:-translate-y-1/2 transition-transform ${rotatation}`} />
+        <ul className="flex flex-col gap-2">
+          {Object.keys(tabContent).map((key, index) => (
+            <li key={index}>
+              <button
+                onClick={() => setActive(key)}
+                className={`${active === key ? 'scale-150 font-bold text-secondary lg:max-2xl:scale-125 max-sm:scale-125' : ''} max-sm:text-xs text-neutral-500 origin-right cursor-pointer leading-relaxed transition-all focus-visible:outline-none lg:max-2xl:text-sm`}
+              >
+                {key}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
 
-        {Object.keys(tabContent).map((key, index) => (
-          <li key={index}>
-            <button
-              onClick={() => setActive(key)}
-              className={`${active === key ? 'scale-150 font-bold text-secondary lg:max-2xl:scale-125 max-sm:scale-125' : ''} text-neutral-500 origin-right cursor-pointer leading-relaxed transition-all focus-visible:outline-none lg:max-2xl:text-sm`}
-            >
-              {key}
-            </button>
-          </li>
-        ))}
-      </ul>
-
-      <div className="border-t pt-2 px-4 max-w-screen-sm flex flex-col gap-4 max-lg:row-start-2 max-lg:col-span-full">
+      <div className="border-t pt-2 px-4 max-w-screen-sm flex flex-col gap-4 max-lg:row-start-2 max-lg:col-span-full max-sm:text-sm">
         {tabContent[active]}
       </div>
-        
-      <div className="flex gap-2 max-lg:col-start-2 w-full pr-4">
-        <div className="basis-3/4">
+
+      <div className="flex gap-2 max-lg:col-start-2 w-full pr-4 group">
+        <div className="basis-3/4 flex-1 transition-all duration-500 group-has-[:last-child:hover]:basis-1/4">
           <Image src={Section1Img1} alt="People working on their computers" className="rounded-lg object-cover h-96 w-auto max-sm:h-48" />
         </div>
-        <div className="basis-1/4">
+        <div className="basis-1/4 hover:basis-3/4 flex-1 transition-all duration-500">
           <Image src={Section1Img2} alt="A computer screen" className="rounded-lg object-cover object-right h-96 w-auto max-sm:h-48" />
         </div>
       </div>

@@ -11,7 +11,7 @@ export default function Navbar() {
             {['Services', 'Projects', 'Testimonials', 'Contact'].map(item => (
               <li key={item}>
                 <a href={`#${item.toLowerCase()}`} className="flex gap-2 items-center">
-                  <span className="shrink-0"><Image width="24" height="24" className="size-4" src={NavbarIcon.src} alt="Navbar icon" aria-hidden /></span>
+                  <span className="shrink-0"><Image width="24" height="24" className="size-4" src={NavbarIcon.src} alt="Navbar icon" /></span>
                   <span>{item}</span>
                   <span className="shrink-0"><MoveDownIcon className="size-4" /></span>
                 </a>
