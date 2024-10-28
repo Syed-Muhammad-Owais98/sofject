@@ -37,7 +37,7 @@ export default function Navbar() {
   return (
     <div className="bg-secondary text-white p-6">
       <div className="max-w-screen-2xl mx-auto flex gap-2 justify-between items-center">
-        <div>
+        <div className="min-h-12">
           <AnimatedLogo />
         </div>
 
