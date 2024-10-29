@@ -3,6 +3,7 @@ import Section5Img1 from "@/app/assets/home/section5-1.webp";
 import Section5Img2 from "@/app/assets/home/section5-2.webp";
 import Section5Img3 from "@/app/assets/home/section5-3.webp";
 import Section5Img4 from "@/app/assets/home/section5-4.webp";
+import ContactForm from "@/app/components/contact-form";
 
 export default function Section5() {
   return (
@@ -41,17 +42,24 @@ export default function Section5() {
           <h3 className="text-5xl font-bold max-sm:text-2xl">
             Contact us
           </h3>
-          <form>
-            <div className="flex flex-col gap-4 mt-8 *:border-b *:bg-transparent *:p-4 *:w-full focus-visible:*:outline-none focus-visible:*:border-primary">
-              <input type="text" placeholder="Full name" />
-              <input type="text" placeholder="Phone number" />
-              <input type="email" placeholder="Email" />
-              <input type="text" placeholder="Message" />
-            </div>
-            <button className="bg-primary rounded-full text-sm font-semibold py-3 px-6 mt-12 block max-md:ml-auto">
-              Contact us
-            </button>
-          </form>
+
+          <div className="mt-8 min-h-[500px] flex flex-col justify-center">
+            <ContactForm submitBtnText="Contact us">
+              <div className="flex flex-col gap-4 *:bg-transparent">
+                <label className="sr-only">Full name</label>
+                <input required type="text" name="name" className="w-full border-b p-4 border-neutral-500 focus-visible:outline-none focus-visible:border-primary" placeholder="Full name *" autoComplete="name" />
+
+                <label className="sr-only">Phone number</label>
+                <input required type="text" name="phone" className="w-full border-b p-4 border-neutral-500 focus-visible:outline-none focus-visible:border-primary" placeholder="Phone number *" autoComplete="mobile tel" />
+
+                <label className="sr-only">Email address</label>
+                <input required type="email" name="email" className="w-full border-b p-4 border-neutral-500 focus-visible:outline-none focus-visible:border-primary" placeholder="Email *" autoComplete="work email" />
+
+                <label className="sr-only">Project details</label>
+                <textarea required name="message" rows={5} className="w-full mt-12 rounded-md border border-neutral-500 focus-visible:outline-none focus-visible:border-primary px-2 py-4 [scrollbar-width:thin] [scrollbar-color:rgb(var(--primary))_transparent] [scrollbar-gutter:stable_both-edges]" placeholder="Message *" />
+              </div>
+            </ContactForm>
+          </div>
         </div>
       </div>
     </section>

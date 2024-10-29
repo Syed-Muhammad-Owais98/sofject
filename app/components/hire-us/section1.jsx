@@ -1,4 +1,5 @@
 import Heading from "@/app/components/heading";
+import ContactForm from "@/app/components/contact-form";
 
 export default function Section1() {
   return (
@@ -14,17 +15,23 @@ export default function Section1() {
             Let’s discuss your project
           </h4>
 
-          <form>
-            <div className="flex flex-col gap-12 mt-8 *:border-secondary *:bg-transparent *:w-full focus-visible:*:outline-none focus-visible:*:border-primary *:max-sm:text-sm max-sm:gap-8">
-              <input type="text" className="border-b py-2" placeholder="Full name *" />
-              <input type="text" className="border-b py-2" placeholder="Phone number *" />
-              <input type="email" className="border-b py-2" placeholder="Email *" />
-              <textarea rows={4} className="rounded-md border p-2" placeholder="Project scope *" />
-            </div>
-            <button className="bg-primary text-white rounded-full text-sm font-semibold py-3 px-6 mt-12 block max-md:ml-auto">
-              Contact us
-            </button>
-          </form>
+          <div className="mt-8 min-h-[500px] flex flex-col justify-center">
+            <ContactForm submitBtnText="Submit">
+              <div className="flex flex-col gap-12 *:bg-transparent *:max-sm:text-sm max-sm:gap-8">
+                <label className="sr-only">Full name</label>
+                <input required type="text" name="name" className="w-full border-secondary border-b py-2 focus-visible:outline-none focus-visible:border-primary" placeholder="Full name *" autoComplete="name" />
+
+                <label className="sr-only">Phone number</label>
+                <input required type="text" name="phone" className="w-full border-secondary border-b py-2 focus-visible:outline-none focus-visible:border-primary" placeholder="Phone number *" autoComplete="mobile tel" />
+
+                <label className="sr-only">Email address</label>
+                <input required type="email" name="email" className="w-full border-secondary border-b py-2 focus-visible:outline-none focus-visible:border-primary" placeholder="Email *" autoComplete="work email" />
+
+                <label className="sr-only">Project details</label>
+                <textarea required name="message" rows={10} className="w-full rounded-md border border-secondary focus-visible:outline-none focus-visible:border-primary px-2 py-4 [scrollbar-width:thin] [scrollbar-color:rgb(var(--primary))_transparent] [scrollbar-gutter:stable_both-edges]" placeholder="Project scope *" />
+              </div>
+            </ContactForm>
+          </div>
         </div>
       </div>
     </section>
