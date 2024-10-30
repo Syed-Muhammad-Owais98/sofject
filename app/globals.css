@@ -9,6 +9,10 @@
   --secondary: 34 33 33; /* #222121 */
 }
 
+:root {
+  scrollbar-color: rgb(var(--primary) / 0.8) rgb(var(--secondary));
+}
+
 body {
   color: var(--foreground);
   background: var(--background);

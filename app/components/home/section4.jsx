@@ -1,7 +1,10 @@
 import Image from "next/image";
 import TestimonialCarousel from "./testimonial-carousel";
 import TestimonialIcon from "@/app/assets/home/testimonial-icon.svg";
-import Section4Img from "@/app/assets/home/section4-1.webp";
+import Section4Img1 from "@/app/assets/home/section4-1.webp";
+import Section4Img2 from "@/app/assets/home/section4-2.webp";
+import Section4Img3 from "@/app/assets/home/section4-3.webp";
+import Section4Img4 from "@/app/assets/home/section4-4.webp";
 
 export default function Section4() {
   return (
@@ -23,32 +26,38 @@ export default function Section4() {
 const testimonials = [
   {
     name: 'Trevor Mitchell',
-    img: Section4Img,
-    rating: 3,
-    paragraph: 'Lorem ipsum dolor sit amet consectetur. Nam praesent viverra tincidunt vel tortor nullam interdum. Sit id scelerisque nunc integer enim arcu aliquam dictum. In diam nisl sed congue'
+    img: Section4Img1,
+    rating: 5,
+    paragraph: "Excellent UI/UX designer, brilliantly refined our mobile app with creative and user-friendly designs."
   },
   {
     name: 'Trevor Mitchell',
-    img: Section4Img,
+    img: Section4Img2,
     rating: 4,
-    paragraph: 'Lorem ipsum dolor sit amet consectetur. Nam praesent viverra tincidunt vel tortor nullam interdum. Sit id scelerisque nunc integer enim arcu aliquam dictum. In diam nisl sed congue'
+    paragraph: "Sofject did a fantastic job! He made our digital marketing product look amazing and easy for everyone to use."
   },
   {
     name: 'Trevor Mitchell',
-    img: Section4Img,
-    rating: 1,
-    paragraph: 'Lorem ipsum dolor sit amet consectetur. Nam praesent viverra tincidunt vel tortor nullam interdum. Sit id scelerisque nunc integer enim arcu aliquam dictum. In diam nisl sed congue'
+    img: Section4Img3,
+    rating: 4,
+    paragraph: "Sofject shows remarkable proficiency in frontend optimization and API integration, leading to improved UI responsiveness and streamlined data management."
   },
   {
     name: 'Trevor Mitchell',
-    img: Section4Img,
-    rating: 1,
-    paragraph: 'Lorem ipsum dolor sit amet consectetur. Nam praesent viverra tincidunt vel tortor nullam interdum. Sit id scelerisque nunc integer enim arcu aliquam dictum. In diam nisl sed congue'
+    img: Section4Img4,
+    rating: 3,
+    paragraph: "Excellent UI/UX designer, brilliantly refined our mobile app with creative and user-friendly designs."
   },
   {
     name: 'Trevor Mitchell',
-    img: Section4Img,
-    rating: 1,
-    paragraph: 'Lorem ipsum dolor sit amet consectetur. Nam praesent viverra tincidunt vel tortor nullam interdum. Sit id scelerisque nunc integer enim arcu aliquam dictum. In diam nisl sed congue'
+    img: Section4Img1,
+    rating: 4,
+    paragraph: "Sofject did a fantastic job! He made our digital marketing product look amazing and easy for everyone to use."
+  },
+  {
+    name: 'Trevor Mitchell',
+    img: Section4Img2,
+    rating: 3,
+    paragraph: "Sofject shows remarkable proficiency in frontend optimization and API integration, leading to improved UI responsiveness and streamlined data management."
   },
 ]

@@ -10,7 +10,7 @@ export default function Section5() {
     <section id="contact" className="py-24 max-sm:py-12 max-w-screen-2xl mx-auto grid grid-cols-[1fr_1.6fr] gap-12 max-md:grid-cols-1 w-full scroll-mt-12">
       <div className="pl-4 max-md:px-4">
         <h2 className="text-4xl font-bold max-sm:text-2xl max-sm:max-w-full">
-          Lorem ipsum dolor sit amet consectetur
+          Get in touch with us
         </h2>
 
         <div className="grid grid-cols-2 gap-2 justify-stretch mt-6 w-full min-h-80">
@@ -33,7 +33,7 @@ export default function Section5() {
         </div>
 
         <p className="mt-8 text-sm">
-          Lorem ipsum dolor sit amet consectetur. Nam praesent viverra tincidunt vel tortor nullam interdum. Sit id scelerisque nunc integer enim arcu aliquam dictum.
+          As your technology partner, we ensure the perfect blend of technologies to meet your needs and deliver outstanding results.
         </p>
       </div>
 

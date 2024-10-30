@@ -12,12 +12,17 @@ export default function Section2() {
               <span className="text-primary text-6xl leading-3 max-sm:text-5xl max-sm:leading-3 ml-1">.</span>
             </h2>
             <p className="font-medium text-sm mt-6">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+              Sofject delivers top-tier software solutions across diverse
+              industries. Our skilled team creates innovative
+              applications that drive business success. With a strong
+              focus on quality and client satisfaction, we've built a solid
+              reputation for helping businesses achieve their goals
+              through cutting-edge technology.
             </p>
           </div>
         </div>
 
-      <NumberCounter />
+        <NumberCounter />
       </div>
     </section>
   );

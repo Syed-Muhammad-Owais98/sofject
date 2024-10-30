@@ -4,6 +4,8 @@ import Image from "next/image";
 import { useState } from "react";
 import Section1Img1 from "@/app/assets/home/section1-1.webp"
 import Section1Img2 from "@/app/assets/home/section1-2.webp"
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 export default function ServicesTab() {
   const [active, setActive] = useState('Mobile app');
@@ -12,16 +14,16 @@ export default function ServicesTab() {
 
   switch (active) {
     case 'Mobile app':
-      rotatation = 'rotate-[-18deg] max-sm:rotate-[-30deg] sm:max-lg:rotate-[-23deg] lg:max-2xl:rotate-[-30deg]'
+      rotatation = 'rotate-[-45deg] sm:rotate-[-30deg] lg:rotate-[-36deg] 2xl:rotate-[-24deg]'
       break;
     case 'Web app':
-      rotatation = 'rotate-[-4deg] max-sm:rotate-[-8deg] sm:max-lg:rotate-[-8deg] lg:max-2xl:rotate-[-10deg]'
+      rotatation = 'rotate-[-20deg] sm:rotate-[-15deg] lg:rotate-[-15deg] 2xl:rotate-[-12deg]'
       break;
     case 'Web design':
-      rotatation = 'rotate-[6deg] sm:max-lg:rotate-[8deg] lg:max-2xl:rotate-[10deg]'
+      rotatation = 'rotate-0'
       break;
     case 'Graphic design':
-      rotatation = 'rotate-[18deg] max-sm:rotate-[30deg] sm:max-lg:rotate-[24deg] lg:max-2xl:rotate-[27deg]'
+      rotatation = 'rotate-[20deg] sm:rotate-[15deg] lg:rotate-[15deg] 2xl:rotate-[12deg]'
       break;
     default:
       rotatation = ''
@@ -43,6 +45,12 @@ export default function ServicesTab() {
               </button>
             </li>
           ))}
+          <li className="">
+            <Link href="/services" className="inline-flex gap-1 items-center text-primary max-sm:text-xs origin-right leading-relaxed lg:max-2xl:text-sm font-bold">
+              <span>Other services</span>
+              <ArrowUpRight className="size-4" />
+            </Link>
+          </li>
         </ul>
       </div>
 
